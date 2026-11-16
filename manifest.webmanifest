@@ -1,0 +1,10 @@
+{
+  "name": "Redstone Holdings Motorcycle Spares",
+  "short_name": "Redstone",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#f6f6f6",
+  "theme_color": "#171717",
+  "description": "Order CG150 motorcycle aftermarket parts from Redstone Holdings.",
+  "icons": []
+}

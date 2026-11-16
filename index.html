@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#171717">
+<meta name="description" content="Shop CG150 motorcycle aftermarket parts from Redstone Holdings. Order via WhatsApp for collection or nationwide courier delivery.">
+<link rel="manifest" href="manifest.webmanifest">
+<title>Redstone Holdings | Motorcycle Spares</title>
+<style>
+:root{--red:#d62828;--black:#171717;--ink:#222;--muted:#666;--line:#e6e6e6;--bg:#f6f6f6}
+*{box-sizing:border-box}body{margin:0;font-family:Arial,Helvetica,sans-serif;color:var(--ink);background:var(--bg)}
+header{background:var(--black);color:white;padding:16px max(18px,calc((100% - 1100px)/2));display:flex;align-items:center;justify-content:space-between;gap:14px;position:sticky;top:0;z-index:5}
+.brand{display:flex;align-items:center;gap:11px}.mark{width:44px;height:44px;background:var(--red);border-radius:10px;display:grid;place-items:center;font-size:25px;font-weight:900}.brand strong{display:block;letter-spacing:1px;font-size:19px}.brand small{font-size:10px;letter-spacing:1.2px;color:#ddd}
+button,.btn{border:0;border-radius:8px;padding:12px 15px;font-weight:700;cursor:pointer;text-decoration:none;display:inline-block}.cartbtn{background:white;color:#171717}.redbtn{background:var(--red);color:white}.darkbtn{background:#222;color:white}.outline{background:white;border:1px solid var(--line);color:#222}
+main{max-width:1100px;margin:auto;padding:22px 18px 60px}.hero{background:linear-gradient(115deg,#171717,#333);color:white;padding:30px 24px;border-radius:16px;margin-bottom:22px}.hero h1{font-size:clamp(27px,5vw,42px);margin:0 0 10px}.hero p{color:#e4e4e4;max-width:650px;line-height:1.5;margin:0 0 18px}.tag{display:inline-block;background:#fff1f1;color:#a71919;padding:6px 10px;border-radius:30px;font-size:12px;font-weight:700}
+.toolbar{display:flex;gap:10px;flex-wrap:wrap;margin:18px 0}.toolbar input,.toolbar select,input,textarea,select{font:inherit;padding:12px;border:1px solid #ccc;border-radius:8px;background:white}.toolbar input{flex:1;min-width:190px}.toolbar select{min-width:180px}
+h2{font-size:22px;margin:25px 0 14px}.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:14px}.product{background:white;border:1px solid var(--line);border-radius:13px;padding:15px;display:flex;flex-direction:column;min-height:220px}.product .pic{height:94px;border-radius:9px;background:#f0f0f0;display:grid;place-items:center;font-size:42px;margin-bottom:12px}.product h3{margin:0 0 6px;font-size:16px}.product p{color:var(--muted);font-size:13px;line-height:1.4;margin:0 0 10px}.price{font-size:18px;font-weight:800;margin-top:auto;margin-bottom:12px}.price.pending{font-size:13px;color:#777}.product button{width:100%}
+.info{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;margin-top:25px}.infobox{background:white;border:1px solid var(--line);padding:16px;border-radius:12px}.infobox h3{margin:0 0 8px}.infobox p{font-size:14px;color:var(--muted);line-height:1.5;margin:0}
+footer{background:#171717;color:#ddd;padding:25px 18px;text-align:center;font-size:13px}
+.modal{display:none;position:fixed;inset:0;background:#0009;z-index:10;padding:15px;overflow:auto}.modal.show{display:block}.panel{background:white;max-width:620px;margin:35px auto;border-radius:14px;padding:20px}.panelhead{display:flex;justify-content:space-between;align-items:center}.panelhead h2{margin:0 0 15px}.close{background:#eee;padding:8px 11px}.cartrow{display:flex;justify-content:space-between;gap:10px;border-bottom:1px solid var(--line);padding:11px 0;font-size:14px}.qty{display:flex;align-items:center;gap:7px}.qty button{padding:5px 9px;background:#eee}.field{display:grid;gap:6px;margin:12px 0}.field label{font-size:13px;font-weight:700}.field input,.field textarea,.field select{width:100%}.note{background:#fff7e6;padding:12px;border-radius:8px;font-size:13px;color:#644b14;line-height:1.45}.empty{color:#777;text-align:center;padding:24px}
+@media(max-width:520px){header{padding:12px}.brand strong{font-size:16px}.cartbtn{padding:10px}.hero{padding:24px 18px}main{padding:16px 12px 45px}}
+</style>
+</head>
+<body>
+<header>
+ <div class="brand"><div class="mark">R</div><div><strong>REDSTONE HOLDINGS</strong><small>MOTORCYCLE SPARES &amp; REPAIRS</small></div></div>
+ <button class="cartbtn" onclick="openCart()">Cart (<span id="cartCount">0</span>)</button>
+</header>
+<main>
+ <section class="hero">
+  <span class="tag">CG150 AFTERMARKET PARTS</span>
+  <h1>Quality parts. Better rides.</h1>
+  <p>Shop motorcycle spares from Redstone Holdings. Choose collection or nationwide courier delivery, then send your order to us on WhatsApp.</p>
+  <a href="#catalogue" class="btn redbtn">Shop parts</a>
+ </section>
+ <div class="toolbar">
+  <input id="search" type="search" placeholder="Search CG150 parts..." oninput="renderProducts()">
+  <select id="category" onchange="renderProducts()"><option value="">All categories</option></select>
+ </div>
+ <h2 id="catalogue">CG150 parts catalogue</h2>
+ <div class="note">Starter catalogue: product names and prices below are examples/placeholders until you provide your actual stock list and selling prices. Please update them before promoting the shop.</div>
+ <div class="grid" id="products"></div>
+ <section class="info">
+  <div class="infobox"><h3>🚚 Nationwide delivery</h3><p>Courier delivery available throughout South Africa. Courier fees and delivery times are confirmed with you before payment.</p></div>
+  <div class="infobox"><h3>🏪 Collection</h3><p>Choose collection at checkout. We will confirm collection arrangements and availability on WhatsApp.</p></div>
+  <div class="infobox"><h3>💳 EFT payment</h3><p>We will send banking details and confirm payment before dispatch or collection. Do not send cash to an unverified account.</p></div>
+ </section>
+ <section class="info">
+  <div class="infobox"><h3>Contact Redstone</h3><p>Raymond: 082 342 3940<br>Francis: 076 019 8516</p></div>
+  <div class="infobox"><h3>Order process</h3><p>Add parts to your cart, enter your details and submit the order through WhatsApp. Your order is not confirmed until Redstone confirms stock and the total.</p></div>
+ </section>
+</main>
+<footer>© <span id="year"></span> Redstone Holdings · Motorcycle Spares &amp; Repairs</footer>
+
+<div class="modal" id="cartModal" role="dialog" aria-modal="true" aria-label="Your shopping cart">
+ <div class="panel">
+  <div class="panelhead"><h2>Your order</h2><button class="close" onclick="closeCart()">✕</button></div>
+  <div id="cartItems"></div>
+  <div class="field"><label for="customer">Your name</label><input id="customer" placeholder="Full name"></div>
+  <div class="field"><label for="phone">Your contact number</label><input id="phone" type="tel" placeholder="e.g. 07X XXX XXXX"></div>
+  <div class="field"><label for="fulfilment">Collection or delivery</label><select id="fulfilment" onchange="toggleAddress()"><option value="Collection">Collection</option><option value="Nationwide courier delivery">Nationwide courier delivery</option></select></div>
+  <div class="field" id="addressField" style="display:none"><label for="address">Delivery address / town and province</label><textarea id="address" rows="3" placeholder="Enter your delivery address"></textarea></div>
+  <div class="field"><label for="payment">Payment method</label><select id="payment"><option value="EFT">EFT (banking details requested)</option></select></div>
+  <div class="field"><label for="notes">Additional notes (optional)</label><textarea id="notes" rows="2" placeholder="Part compatibility, preferred collection time, etc."></textarea></div>
+  <div class="note">Submitting opens WhatsApp with your order details. Redstone will confirm product availability, final pricing, courier fees and EFT banking details. Prices marked “Price to be confirmed” are not included in the order total.</div>
+  <p><strong>Estimated catalogue total: <span id="total">R0.00</span></strong></p>
+  <div class="field"><label for="contactChoice">Send order to</label><select id="contactChoice"><option value="27823423940">Raymond – 082 342 3940</option><option value="27760198516">Francis – 076 019 8516</option></select></div>
+  <button class="redbtn" style="width:100%" onclick="sendOrder()">Send order via WhatsApp</button>
+ </div>
+</div>
+<script>
+/* EDIT THIS CATALOGUE: replace sample names, categories and null prices with your real stock and selling prices in rand. */
+const products = [
+ {id:1,name:"CG150 Piston Kit",category:"Engine parts",description:"Aftermarket piston kit. Confirm size and compatibility before ordering.",price:null,icon:"⚙️"},
+ {id:2,name:"CG150 Clutch Plates",category:"Engine parts",description:"Aftermarket clutch components. Confirm fitment before ordering.",price:null,icon:"🔩"},
+ {id:3,name:"CG150 Brake Pads",category:"Brake parts",description:"Brake component. Confirm front/rear fitment before ordering.",price:null,icon:"🛠️"},
+ {id:4,name:"CG150 Chain & Sprocket Kit",category:"Drive parts",description:"Drive kit. Confirm tooth count and fitment before ordering.",price:null,icon:"⛓️"},
+ {id:5,name:"CG150 Front Tyre",category:"Tyres & tubes",description:"Confirm tyre size, ply rating and availability.",price:null,icon:"🏍️"},
+ {id:6,name:"CG150 Rear Tyre",category:"Tyres & tubes",description:"Confirm tyre size, ply rating and availability.",price:null,icon:"🏍️"},
+ {id:7,name:"CG150 Inner Tube",category:"Tyres & tubes",description:"Confirm size and valve type before ordering.",price:null,icon:"⭕"},
+ {id:8,name:"CG150 Air Filter",category:"Service parts",description:"Replacement service part. Confirm compatibility.",price:null,icon:"🧰"}
+];
+let cart = {};
+const money = n => new Intl.NumberFormat("en-ZA",{style:"currency",currency:"ZAR"}).format(n);
+function renderProducts(){
+ const q=document.getElementById("search").value.toLowerCase(), c=document.getElementById("category").value;
+ const list=products.filter(p=>(!c||p.category===c)&&(p.name+" "+p.description).toLowerCase().includes(q));
+ document.getElementById("products").innerHTML=list.map(p=>`<article class="product"><div class="pic">${p.icon}</div><h3>${p.name}</h3><p>${p.description}</p><div class="price ${p.price==null?'pending':''}">${p.price==null?'Price to be confirmed':money(p.price)}</div><button class="redbtn" onclick="addToCart(${p.id})">Add to order</button></article>`).join("")||'<div class="empty">No matching products found.</div>';
+}
+function initCategories(){const cats=[...new Set(products.map(p=>p.category))];document.getElementById("category").innerHTML='<option value="">All categories</option>'+cats.map(c=>`<option>${c}</option>`).join("");}
+function addToCart(id){cart[id]=(cart[id]||0)+1;updateCount();openCart();}
+function updateCount(){document.getElementById("cartCount").textContent=Object.values(cart).reduce((a,b)=>a+b,0);}
+function openCart(){document.getElementById("cartModal").classList.add("show");renderCart();}
+function closeCart(){document.getElementById("cartModal").classList.remove("show");}
+function toggleAddress(){document.getElementById("addressField").style.display=document.getElementById("fulfilment").value.startsWith("Nationwide")?"grid":"none";}
+function renderCart(){
+ const entries=Object.entries(cart).filter(([id,q])=>q>0);
+ document.getElementById("cartItems").innerHTML=entries.length?entries.map(([id,q])=>{const p=products.find(x=>x.id==id);return `<div class="cartrow"><div><strong>${p.name}</strong><br>${p.price==null?'Price to be confirmed':money(p.price)+' each'}</div><div class="qty"><button onclick="changeQty(${id},-1)">−</button>${q}<button onclick="changeQty(${id},1)">+</button></div></div>`}).join(""):'<div class="empty">Your cart is empty. Add parts from the catalogue.</div>';
+ const total=entries.reduce((s,[id,q])=>{const p=products.find(x=>x.id==id);return s+(p.price||0)*q},0);
+ document.getElementById("total").textContent=money(total)+(entries.some(([id])=>products.find(p=>p.id==id).price==null)?" + unpriced items":"");
+}
+function changeQty(id,d){cart[id]=(cart[id]||0)+d;if(cart[id]<=0)delete cart[id];updateCount();renderCart();}
+function sendOrder(){
+ const entries=Object.entries(cart).filter(([id,q])=>q>0);if(!entries.length){alert("Please add at least one product.");return;}
+ const name=document.getElementById("customer").value.trim(), phone=document.getElementById("phone").value.trim(), fulfil=document.getElementById("fulfilment").value, address=document.getElementById("address").value.trim();
+ if(!name||!phone){alert("Please enter your name and contact number.");return;}
+ if(fulfil.startsWith("Nationwide")&&!address){alert("Please enter your delivery address or town and province.");return;}
+ let total=0, hasUnpriced=false;
+ const lines=entries.map(([id,q])=>{const p=products.find(x=>x.id==id);if(p.price==null){hasUnpriced=true;return `• ${p.name} x ${q} – price to be confirmed`;}total+=p.price*q;return `• ${p.name} x ${q} – ${money(p.price*q)}`;});
+ const msg=`REDSTONE HOLDINGS – NEW ORDER\n\nCustomer: ${name}\nContact: ${phone}\n\nORDER:\n${lines.join("\n")}\n\nEstimated priced items total: ${money(total)}${hasUnpriced?" (plus items requiring price confirmation)":""}\nFulfilment: ${fulfil}${address?"\nDelivery address: "+address:""}\nPayment: EFT\nNotes: ${document.getElementById("notes").value.trim()||"None"}\n\nPlease confirm stock, final total, courier fee (if applicable), and EFT banking details.`;
+ const number=document.getElementById("contactChoice").value;
+ window.open("https://wa.me/"+number+"?text="+encodeURIComponent(msg),"_blank");
+}
+document.getElementById("year").textContent=new Date().getFullYear();
+initCategories();renderProducts();
+if("serviceWorker" in navigator && location.protocol.startsWith("http")){window.addEventListener("load",()=>navigator.serviceWorker.register("./sw.js").catch(()=>{}));}
+</script>
+</body></html>
